@@ -61,10 +61,10 @@ echo "Preparing authentication module."
 
     }' >> /etc/freeradius/3.0/mods-available/sql
  echo "
-    server = "$DBHOST"
+    server = "$HOST"
     port = 3306
-    login = "$DBUSER"
-    password = "$DBPASS"
+    login = "$USER"
+    password = "$PASS"
     radius_db = "$DBNAME"
     " >> /etc/freeradius/3.0/mods-available/sql
  echo 'acct_table1 = "radacct"
@@ -346,10 +346,10 @@ install_done()
   echo
   history -c;
   rm /root/.installer
-  echo "DB_HOST='$DBHOST'" >> ~/.db-base
+  echo "DB_HOST='$HOST'" >> ~/.db-base
   echo "DB_NAME='$DBNAME'" >> ~/.db-base
-  echo "DB_USER='$DBUSER'" >> ~/.db-base
-  echo "DB_PASS='$DBPASS'" >> ~/.db-base
+  echo "DB_USER='$USER'" >> ~/.db-base
+  echo "DB_PASS='$PASS'" >> ~/.db-base
   echo "Server will secure this server and reboot after 20 seconds"
   sleep 20
   reboot
